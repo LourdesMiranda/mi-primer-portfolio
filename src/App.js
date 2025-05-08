@@ -66,7 +66,7 @@ function App() {
         <div className="skills-scroll">
           {[
             { name: 'HTML', logo: '/images/html_logo.png', level: 90 },
-            { name: 'CSS', logo: '/images/.png', level: 80 },
+            { name: 'CSS', logo: '/images/css_logo.png', level: 80 },
             { name: 'JavaScript', logo: '/images/javascript_logo.png', level: 40 },
             { name: 'TypeScript', logo: '/images/logo_typescript.png', level: 0 },
             { name: 'React', logo: '/images/logo_react.png', level: 10 },
