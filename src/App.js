@@ -70,8 +70,8 @@ function App() {
             { name: 'JavaScript', logo: '/images/javascript_logo.png', level: 40 },
             { name: 'TypeScript', logo: '/images/logo_typescript.png', level: 0 },
             { name: 'React', logo: '/images/logo_react.png', level: 10 },
-            { name: 'GitHub', logo: '/images/logo_github.png', level: 10 },
-            { name: 'Git', logo: '/images/git_logo.png', level: 15 },
+            { name: 'GitHub', logo: '/images/logo_github.png', level: 30 },
+            { name: 'Git', logo: '/images/git_logo.png', level: 40 },
             { name: 'WordPress', logo: '/images/wordpress_logo.jpg', level: 50 },
             { name: 'Salesforce', logo: '/images/salesforce_logo.png', level: 60 }
           ].map((skill) => (
