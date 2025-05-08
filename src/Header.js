@@ -1,8 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Efecto para bloquear el scroll cuando el menú está abierto
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+    
+    return () => {
+      document.body.classList.remove('menu-open');
+    };
+  }, [menuOpen]);
 
   return (
     <header className="header sticky">
@@ -16,8 +29,12 @@ function Header() {
           <h1>Hola, soy Lourdes</h1>
         </div>
         
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
+        <button 
+          className="menu-toggle" 
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+        >
+          {menuOpen ? '✕' : '☰'}
         </button>
         
         <nav className={`nav-links ${menuOpen ? 'active' : ''}`}>

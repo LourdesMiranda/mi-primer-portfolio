@@ -240,12 +240,26 @@ function App() {
         </div>
       </section>
 
-      {/* MODAL DE IMAGEN AMPLIADA */}
-      {selectedImage && (
-        <div className="modal" onClick={closeImage}>
-          <img src={selectedImage} alt="Vista ampliada" className="modal-image" />
-        </div>
-      )}
+  {/* MODAL DE IMAGEN AMPLIADA */}
+  {selectedImage && (
+  <div className="image-modal" onClick={closeImage}>
+    <div className="modal-content">
+      <button className="close-button" onClick={closeImage} aria-label="Cerrar imagen">
+        &times;
+      </button>
+      <img 
+        src={selectedImage} 
+        alt={selectedImage.includes("wareframe_fisico") ? "Wireframes físico" : "Wireframes digital"} 
+        className="modal-image"
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          width: 'auto',
+          height: 'auto'
+        }}
+      />
+    </div>
+  </div>
+)}
     </div>
   );
 }

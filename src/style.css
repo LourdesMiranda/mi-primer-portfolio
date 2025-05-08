@@ -28,8 +28,9 @@ body {
 }
 
 /* ---------------------- */
-/* HEADER */
+/* HEADER - VERSIÓN CORREGIDA */
 /* ---------------------- */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -53,10 +54,12 @@ body {
   margin: 0 auto;
 }
 
+/* Logo y título */
 .logo-container {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+  z-index: 1002; /* Por encima del menú móvil */
 }
 
 .profile-img {
@@ -112,8 +115,14 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  transition: all 0.3s ease;
 }
 
+.logo-container:hover h1 {
+  text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+}
+
+/* Menú de navegación - Desktop */
 .nav-links ul {
   display: flex;
   list-style: none;
@@ -138,6 +147,86 @@ body {
   border-color: #4fc3f7;
   background-color: rgba(79, 195, 247, 0.1);
   box-shadow: 0 0 12px rgba(79, 195, 247, 0.3);
+}
+
+/* Menú móvil - Versión corregida */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s;
+  padding: 0.5rem;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+    height: 70px;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  /* Menú móvil corregido - Desaparece completamente cuando está cerrado */
+  .nav-links {
+    display: none; /* Oculta completamente el menú cuando está cerrado */
+    position: fixed;
+    top: 70px; /* Justo debajo del header */
+    left: 0;
+    right: 0;
+    background-color: rgba(10, 25, 47, 0.98);
+    z-index: 1000;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(79, 195, 247, 0.2);
+  }
+  
+  .nav-links.active {
+    display: block; /* Muestra el menú cuando está activo */
+  }
+  
+  .nav-links ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .nav-links a {
+    display: block;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    background-color: rgba(79, 195, 247, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background-color: rgba(79, 195, 247, 0.2);
+  }
+  
+  .profile-img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .logo-container h1 {
+    font-size: 1.4rem;
+  }
+  
+  /* Bloquear scroll cuando el menú está abierto */
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
 }
 
 /* ---------------------- */
@@ -226,8 +315,8 @@ body {
 }
 
 .project-image-item img {
-  width: 180px; /* Reducido de 250px */
-  height: 120px; /* Altura fija para uniformidad */
+  width: 180px;
+  height: 120px;
   border-radius: 6px;
   border: 1px solid #4fc3f7;
   object-fit: cover;
@@ -410,13 +499,11 @@ body {
   100% { transform: scale(1); }
 }
 
-/* Estilo específico para ChatGPT */
 .skill-chatgpt .skill-progress-bar {
-  width: 85%; /* Ajusta según tu nivel */
-  background: linear-gradient(90deg, #10a37f, #68d391); /* Verde característico de ChatGPT */
+  width: 85%;
+  background: linear-gradient(90deg, #10a37f, #68d391);
 }
 
-/* Efecto hover especial para ChatGPT */
 .skill-chatgpt:hover {
   box-shadow: 0 8px 16px rgba(16, 163, 127, 0.3);
 }
@@ -424,9 +511,9 @@ body {
 .skill-chatgpt:hover .skill-icon {
   animation: pulse 0.8s infinite alternate;
 }
-/* Estilo específico para WordPress */
+
 .skill-wordpress .skill-progress-bar {
-  background: linear-gradient(90deg, #21759b, #34a0d9); /* Azul característico de WordPress */
+  background: linear-gradient(90deg, #21759b, #34a0d9);
 }
 
 .skill-wordpress:hover {
@@ -437,9 +524,8 @@ body {
   animation: pulse 0.8s infinite alternate;
 }
 
-/* Estilo específico para Salesforce */
 .skill-salesforce .skill-progress-bar {
-  background: linear-gradient(90deg, #00a1e0, #1ab7ea); /* Azul característico de Salesforce */
+  background: linear-gradient(90deg, #00a1e0, #1ab7ea);
 }
 
 .skill-salesforce:hover {
@@ -450,7 +536,6 @@ body {
   animation: pulse 0.8s infinite alternate;
 }
 
-/* Efecto de brillo al pasar el mouse */
 .skill-salesforce:hover .skill-icon-container::before {
   background: radial-gradient(
     circle,
@@ -644,8 +729,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
-/* Estilo para la descripción de experiencia */
 .education-description {
   margin: 0.5rem 0 0 0;
   font-size: 0.9rem;
@@ -653,20 +736,8 @@ html {
   line-height: 1.4;
 }
 
-/* Ajuste para los ítems de experiencia */
 .experience-item {
-  border-left: 4px solid #4fc3f7; /* Color diferente para distinguir */
-}
-
-.experience-item:hover {
-  background-color: rgba(16, 163, 127, 0.05);
-}
-
-
-
-/* Estilos para experiencia laboral */
-.experience-item {
-  border-left: 4px solid #4fc3f7; /* Verde diferente al azul de formación */
+  border-left: 4px solid #4fc3f7;
 }
 
 .experience-item:hover {
@@ -674,14 +745,7 @@ html {
   box-shadow: 0 5px 15px rgba(16, 163, 127, 0.2);
 }
 
-.education-description {
-  margin: 0.5rem 0 0 0;
-  font-size: 0.9rem;
-  color: #ddd;
-  line-height: 1.4;
-}
-
-/* ========= NUEVOS ESTILOS PARA CONTACTO ========= */
+/* ========= CONTACTO ========= */
 .contact-container {
   display: flex;
   justify-content: space-between;
@@ -782,68 +846,109 @@ html {
   }
 }
 
-/* Estilos para imágenes clicables */
-.clickable-image {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.clickable-image:hover {
-  opacity: 0.9;
-  box-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
-}
-
-/* Estilos para el modal/lightbox */
+/* ========= MODAL REAJUSTADO PARA IMÁGENES COMPLETAS ========= */
 .image-modal {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.98);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
-  animation: fadeIn 0.3s ease;
+  padding: 10px;
+  overflow: auto;
 }
 
 .modal-content {
   position: relative;
-  max-width: 90%;
-  max-height: 90%;
+  width: 100%;
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.modal-content img {
+.modal-image {
+  width: auto;
+  height: auto;
   max-width: 100%;
-  max-height: 80vh;
-  border: 2px solid #4fc3f7;
+  max-height: 60vh;
+  object-fit: contain;
+  border: 1px solid #4fc3f7;
   border-radius: 5px;
-  box-shadow: 0 0 20px rgba(79, 195, 247, 0.3);
+  box-shadow: 0 0 15px rgba(79, 195, 247, 0.3);
+}
+
+/* ESTILOS ESPECÍFICOS CON TAMAÑOS ABSOLUTOS */
+.modal-image[alt="Wireframes físico"] {
+  background-color: #f0f0f0;
+  padding: 5px;
+  max-height: 50vh; /* Altura fija para el físico */
+  max-width: 90vw; /* Ancho máximo basado en viewport */
+}
+
+.modal-image[alt="Wireframes digital"] {
+  background-color: #1a1a1a;
+  max-height: 55vh; /* Altura fija para el digital */
+  max-width: 85vw;
 }
 
 .close-button {
-  position: absolute;
-  top: -40px;
-  right: 0;
-  background: none;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: rgba(79, 195, 247, 0.95);
   border: none;
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: color 0.3s;
+  z-index: 2001;
 }
 
-.close-button:hover {
-  color: #4fc3f7;
+/* AJUSTES ESPECÍFICOS PARA MÓVILES PEQUEÑOS */
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 98%;
+  }
+  
+  .modal-image[alt="Wireframes físico"] {
+    max-height: 45vh;
+    max-width: 95vw;
+  }
+  
+  .modal-image[alt="Wireframes digital"] {
+    max-height: 40vh;
+    max-width: 90vw;
+  }
+
+  /* Orientación horizontal */
+  @media (orientation: landscape) {
+    .modal-image[alt="Wireframes físico"] {
+      max-height: 50vh;
+      max-width: 80vw;
+    }
+    .modal-image[alt="Wireframes digital"] {
+      max-height: 45vh;
+      max-width: 75vw;
+    }
+  }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Efecto al hacer clic */
-.clickable-image:active {
-  transform: scale(0.98);
+/* AJUSTE PARA PANTALLAS MUY CORTAS */
+@media (max-height: 600px) {
+  .modal-image[alt="Wireframes físico"] {
+    max-height: 40vh;
+  }
+  .modal-image[alt="Wireframes digital"] {
+    max-height: 35vh;
+  }
 }
