@@ -9,7 +9,7 @@ function Header() {
       <div className="header-content">
         <div className="logo-container">
           <img 
-            src={process.env.PUBLIC_URL + "public/images/lourdesmirandamoreno.jpg"}
+            src={process.env.PUBLIC_URL + "/images/lourdesmirandamoreno.jpg"}
             alt="Lourdes Miranda" 
             className="profile-img"
           />
