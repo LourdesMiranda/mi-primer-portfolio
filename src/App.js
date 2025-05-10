@@ -233,7 +233,7 @@ function App() {
             <a href="https://github.com/LourdesMiranda" target="_blank" rel="noopener noreferrer">
               <img src={process.env.PUBLIC_URL + "/images/logo_github.png"} alt="GitHub" className="social-icon" />
             </a>
-            <a href="https://drive.google.com/file/d/1HbpJ5E68Vglch9U9oF7T08htvVk0XgA-/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1DMo5S-2wF08vs5Tw_jOQ36V_FjLmkn9O/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <img src={process.env.PUBLIC_URL + "/images/cv_logo.png"} alt="CV" className="social-icon" />
             </a>
           </div>
