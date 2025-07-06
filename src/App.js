@@ -25,7 +25,9 @@ function App() {
         <h2>Proyectos</h2>
         <div className="projects-container">
           <div className="project-card">
-            <h3>Black Book</h3>
+            <a href='https://lourdesmiranda.github.io/black-books/' className="project-button">
+           <h3>Black Book🔗</h3>
+           </a>
             <p><b><u>Proyecto personal</u></b> enfocado en el diseño de una interfaz web oscura y misteriosa para amantes de la lectura y el cine.</p> 
             <p><b><u>Objetivo:</u></b> Desarrollar una estructura visual clara y atractiva, con diseño responsive, con el fin de practicar maquetación web con HTML, CSS, JavaScript y React.</p>
             
@@ -65,13 +67,13 @@ function App() {
         <h2>Habilidades</h2>
         <div className="skills-scroll">
           {[
-            { name: 'HTML', logo: '/images/html_logo.png', level: 90 },
-            { name: 'CSS', logo: '/images/css_logo.png', level: 80 },
+            { name: 'HTML', logo: '/images/html_logo.png', level: 95 },
+            { name: 'CSS', logo: '/images/css_logo.png', level: 85 },
             { name: 'JavaScript', logo: '/images/javascript_logo.png', level: 40 },
             { name: 'TypeScript', logo: '/images/logo_typescript.png', level: 0 },
-            { name: 'React', logo: '/images/logo_react.png', level: 10 },
-            { name: 'GitHub', logo: '/images/logo_github.png', level: 30 },
-            { name: 'Git', logo: '/images/git_logo.png', level: 40 },
+            { name: 'React', logo: '/images/logo_react.png', level: 45 },
+            { name: 'GitHub', logo: '/images/logo_github.png', level: 40 },
+            { name: 'Git', logo: '/images/git_logo.png', level: 50 },
             { name: 'WordPress', logo: '/images/wordpress_logo.jpg', level: 50 },
             { name: 'Salesforce', logo: '/images/salesforce_logo.png', level: 60 }
           ].map((skill) => (

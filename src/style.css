@@ -360,6 +360,36 @@ body {
   }
 }
 
+/* Estilos para el botón de proyecto */
+.project-button {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.project-button h3 {
+  background-color: rgba(79, 195, 247, 0.2);
+  color: #4fc3f7;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 2px solid #4fc3f7;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.project-button:hover h3 {
+  background-color: rgba(79, 195, 247, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(79, 195, 247, 0.3);
+}
+
+.project-button:active h3 {
+  transform: translateY(0);
+}
+
+
+
 /* Habilidades */
 .skills-scroll {
   display: flex;
