@@ -25,7 +25,7 @@ function App() {
         <h2>Proyectos</h2>
         <div className="projects-container">
           <div className="project-card">
-            <a href='https://lourdesmiranda.github.io/black-books/' className="project-button">
+            <a href='https://lourdesmiranda.github.io/black-books/' className="project-button" Target="_blank">
            <h3>Black Book🔗</h3>
            </a>
             <p><b><u>Proyecto personal</u></b> enfocado en el diseño de una interfaz web oscura y misteriosa para amantes de la lectura y el cine.</p> 
